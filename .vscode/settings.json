@@ -1,0 +1,6 @@
+{
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.pythonPath": "C:\\Users\\Malte\\.virtualenvs\\COVID-19-Hospitalisierungen_in_Deutschland-T17M0OPx\\Scripts\\python.exe"
+}
