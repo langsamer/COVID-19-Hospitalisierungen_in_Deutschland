@@ -11,12 +11,11 @@ cv19h_frame = pd.read_csv("Aktuell_Deutschland_COVID-19-Hospitalisierungen.csv")
 # %%
 
 date_range = st.slider(
-    label="startdate",
+    label="Zeitraum",
     min_value=date(year=2020, month=3, day=5),
     max_value=date.today(),
     value=(date.today()+timedelta(days=-30), date.today()),
     )
-st.write(f"Range {date_range}")
 
 df = cv19h_frame
 recent = cv19h_frame.loc[
@@ -29,3 +28,6 @@ recent = cv19h_frame.loc[
 # %%
 recent_by_date = recent.loc[:, ["Datum", "7T_Hospitalisierung_Inzidenz"]].set_index("Datum")
 st.line_chart(recent_by_date)
+
+st.write(f"7-Tage-Hospitalisierungs-Inzidenz im Zeitraum von {date_range[0].isoformat()} bis {date_range[1].isoformat()}")
+st.markdown("Quelle: [Robert-Koch-Institut](https://github.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland)")
